@@ -21,8 +21,11 @@ from discord import app_commands
 import json
 import os
 import asyncio
+import re
+import logging
+from logging.handlers import RotatingFileHandler
 from datetime import datetime, timedelta
-from typing import Optional, Dict, List, Union
+from typing import Optional, Dict, List, Union, Any
 from collections import defaultdict
 
 import sys
@@ -629,20 +632,20 @@ class ModerationCog(commands.Cog):
                 "info": "#00BFFF"
             },
             "rate_limit": {
-                "enabled": true,
+                "enabled": True,
                 "max_commands": "5",
                 "per_seconds": "60"
             },
             "auto_actions": {
-                "enabled": true,
+                "enabled": True,
                 "auto_ban_warns": "5",
                 "auto_mute_warns": "3"
             },
-            "dm_users": true,
-            "show_warn_count": true,
-            "log_file_enabled": true,
+            "dm_users": True,
+            "show_warn_count": True,
+            "log_file_enabled": True,
             "backup": {
-                "enabled": true,
+                "enabled": True,
                 "interval_hours": "24",
                 "keep_backups": "3"
             }
